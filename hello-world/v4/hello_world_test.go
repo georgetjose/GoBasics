@@ -18,7 +18,7 @@ func TestHelloWorld(t *testing.T) {
 //testing.TB which is an interface that *testing.T and *testing.B both satisfy, so you can call helper functions from a test
 func assertCorrectMessage(actual, expected string, t testing.TB) {
 	t.Helper()//t.Helper() is needed to tell the test suite that this method is a helper. By doing this when it fails the line number reported will be in our function call rather than inside our test helper.
-	if actual == expected {
+	if actual != expected {
 		t.Errorf("Actual: %q Expected: %q", actual, expected)
 	}
 }
